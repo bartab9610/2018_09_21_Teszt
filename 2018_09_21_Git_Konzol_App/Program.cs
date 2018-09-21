@@ -30,6 +30,16 @@ namespace _2018_09_21_Git_Konzol_App
                 }
             }
             Console.WriteLine("A bekért számok legnagyobb eleme: {0}",max);
+            int min;
+            min = szamok_tomb[0];
+            for (int i = 0; i < szamok_tomb.Length; i++)
+            {
+                if (szamok_tomb[i] < min)
+                {
+                    min = szamok_tomb[i];
+                }
+            }
+            Console.WriteLine("A bekért számok legkisebb eleme: {0}",min);
             Console.ReadKey();
         }
     }
