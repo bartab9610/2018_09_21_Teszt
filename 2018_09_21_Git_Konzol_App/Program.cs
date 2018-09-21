@@ -10,7 +10,25 @@ namespace _2018_09_21_Git_Konzol_App
     {
         static void Main(string[] args)
         {
-
+            int[] szamok_tomb = new int[10];
+            Console.WriteLine("Adjon még 10 darab számot: ");
+            
+            int max;
+            for (int i = 0; i < szamok_tomb.Length; i++)
+            {
+                Console.Write("Adja meg a(z) {0} számot: ", i+1);
+                szamok_tomb[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            max = szamok_tomb[0];
+            for (int i = 0; i < szamok_tomb.Length; i++)
+            {
+                if (szamok_tomb[i] > max)
+                {
+                    max = szamok_tomb[i];
+                }
+            }
+            Console.WriteLine("A bekért számok legnagyobb eleme: {0}",max);
+            Console.ReadKey();
         }
     }
 }
