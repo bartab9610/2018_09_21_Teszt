@@ -11,15 +11,26 @@ namespace _2018_09_21_Git_Konzol_App
         static void Main(string[] args)
         {
             Console.Write("Adja meg a tömb elemeinek számát: ");
-            int db = Convert.ToInt32(Console.ReadLine()); 
+            int db;
+            if (!int.TryParse(Console.ReadLine(), out db))
+            {
+                Console.WriteLine("Nem szám!");
+                Console.ReadKey();
+                return;
+            }
             int[] szamok_tomb = new int[db];
             Console.WriteLine();
-            Console.WriteLine("Adjon még {0} darab számot: ",db);
+            Console.WriteLine("Adjon még {0} darab számot: ", db);
             int max;
             for (int i = 0; i < szamok_tomb.Length; i++)
             {
-                Console.Write("Adja meg a(z) {0} számot: ", i+1);
-                szamok_tomb[i] = Convert.ToInt32(Console.ReadLine());
+                Console.Write("Adja meg a(z) {0} számot: ", i + 1);
+                if (!int.TryParse(Console.ReadLine(), out szamok_tomb[i]))
+                {
+                    Console.WriteLine("Nem szám!");
+                    Console.ReadKey();
+                    return;
+                }
             }
             max = szamok_tomb[0];
             for (int i = 0; i < szamok_tomb.Length; i++)
@@ -29,7 +40,7 @@ namespace _2018_09_21_Git_Konzol_App
                     max = szamok_tomb[i];
                 }
             }
-            Console.WriteLine("A bekért számok legnagyobb eleme: {0}",max);
+            Console.WriteLine("A bekért számok legnagyobb eleme: {0}", max);
             int min;
             min = szamok_tomb[0];
             for (int i = 0; i < szamok_tomb.Length; i++)
@@ -39,8 +50,9 @@ namespace _2018_09_21_Git_Konzol_App
                     min = szamok_tomb[i];
                 }
             }
-            Console.WriteLine("A bekért számok legkisebb eleme: {0}",min);
+            Console.WriteLine("A bekért számok legkisebb eleme: {0}", min);
             Console.ReadKey();
+
         }
     }
 }
