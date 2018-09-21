@@ -10,9 +10,11 @@ namespace _2018_09_21_Git_Konzol_App
     {
         static void Main(string[] args)
         {
-            int[] szamok_tomb = new int[10];
-            Console.WriteLine("Adjon még 10 darab számot: ");
-            
+            Console.Write("Adja meg a tömb elemeinek számát: ");
+            int db = Convert.ToInt32(Console.ReadLine()); 
+            int[] szamok_tomb = new int[db];
+            Console.WriteLine();
+            Console.WriteLine("Adjon még {0} darab számot: ",db);
             int max;
             for (int i = 0; i < szamok_tomb.Length; i++)
             {
